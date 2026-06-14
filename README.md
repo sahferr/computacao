@@ -1,1 +1,2 @@
-# computa-o
+# Computopia
+MVP version: 1.0.0
