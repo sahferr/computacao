@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "homepage": "git@github.com:sahferr/Computopia.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
