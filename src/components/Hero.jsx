@@ -1,4 +1,4 @@
-import heroProgrammerImage from "../assets/computopia-hero-programmer.png";
+import heroProgrammerImage from "../assets/computopia-hero-programmer.webp";
 
 export function Hero({ copy, query, setQuery, stats }) {
   return (
