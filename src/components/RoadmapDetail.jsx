@@ -1,6 +1,17 @@
 import { TechPanel } from "./TechPanel.jsx";
 
 export function RoadmapDetail({ area, hasResults, copy }) {
+  function scrollTopics(event) {
+    const topicList = event.currentTarget
+      .closest(".phase-content")
+      ?.querySelector(".topics");
+
+    topicList?.scrollBy({
+      left: topicList.clientWidth * 0.82,
+      behavior: "smooth",
+    });
+  }
+
   if (!hasResults) {
     return (
       <section className="content" aria-live="polite">
@@ -35,12 +46,22 @@ export function RoadmapDetail({ area, hasResults, copy }) {
                 </span>
               </summary>
 
-              <div className="topics">
-                {phase.topics.map((topic) => (
-                  <div className="topic" key={topic}>
-                    {topic}
-                  </div>
-                ))}
+              <div className="phase-content">
+                <div className="topics">
+                  {phase.topics.map((topic) => (
+                    <div className="topic" key={topic}>
+                      {topic}
+                    </div>
+                  ))}
+                </div>
+                <button
+                  className="topic-next"
+                  type="button"
+                  aria-label={copy.detail.nextTopic}
+                  onClick={scrollTopics}
+                >
+                  <span aria-hidden="true">›</span>
+                </button>
               </div>
             </details>
           ))}

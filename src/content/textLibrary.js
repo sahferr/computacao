@@ -5,8 +5,8 @@ export const textLibrary = {
     eyebrow: "Ciência da Computação",
     heroTitle: "Computopia",
     heroLead:
-      "Explore áreas fundamentais de CC em quatro fases progressivas, com leitura, busca rápida e uma estrutura feita para crescer junto com seus estudos.",
-    footer: "Computopia: um mapa para estudar Ciência da Computação.",
+      "Página sobre Ciência da Computação! Este espaço é organizado em guias de estudo para áreas essenciais em quatro fases progressivas. O objetivo é ser uma fonte de materiais livres tanto para calouros quanto para veteranos e autodidatas.",
+    footer: "Computopia: roteiro para estudar Ciência da Computação.",
   },
   navigation: [
     { label: "Início", href: "#root", tone: "active" },
@@ -42,7 +42,8 @@ export const textLibrary = {
       {
         name: "John von Neumann",
         area: "arquitetura",
-        phrase: "Organizar memória, instruções e dados muda o alcance das ideias.",
+        phrase:
+          "Organizar memória, instruções e dados muda o alcance das ideias.",
       },
       {
         name: "Grace Hopper",
@@ -52,19 +53,23 @@ export const textLibrary = {
       {
         name: "Edsger Dijkstra",
         area: "algoritmos",
-        phrase: "Clareza no raciocínio também é parte da construção do software.",
+        phrase:
+          "Clareza no raciocínio também é parte da construção do software.",
       },
       {
         name: "Katherine Johnson",
         area: "cálculo",
-        phrase: "Precisão, método e confiança fazem a ciência chegar mais longe.",
+        phrase:
+          "Precisão, método e confiança fazem a ciência chegar mais longe.",
       },
     ],
   },
   detail: {
     phaseCount: "4 fases",
+    libraryToggle: "Bibliotecas",
+    nextTopic: "Mostrar próximo conteúdo",
     description:
-      "Estude em fases pequenas: comece pela base, avance para aplicações e aprofunde quando fizer sentido.",
+      "Consolide os fundamentos de cada assunto e evolua gradualmente para aplicações práticas de alta complexidade.",
     topicCount: (count) => `${count} tópicos para explorar`,
     areaCount: (count) => `4 fases · ${count} tópicos`,
     phaseTitle: (index, title) => `Fase ${index + 1}: ${title}`,

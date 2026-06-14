@@ -6,7 +6,10 @@ export function Footer({ copy }) {
         <p>{copy.footer.intro}</p>
       </div>
 
-      <div className="footer-quotes" aria-label="Nomes importantes da computação">
+      <div
+        className="footer-quotes"
+        aria-label="Nomes importantes da computação"
+      >
         {copy.footer.notes.map((note) => (
           <article className="footer-quote" key={note.name}>
             <span>{note.area}</span>
@@ -18,7 +21,7 @@ export function Footer({ copy }) {
 
       <div className="footer-bottom">
         <span>{copy.site.footer}</span>
-        <span>Computopia</span>
+        <span>Sara Ferreira</span>
       </div>
     </footer>
   );
