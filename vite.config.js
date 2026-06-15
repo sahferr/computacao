@@ -2,6 +2,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/computopia/",
+  base: "/Computopia/",
   plugins: [react()],
 });
+z;
