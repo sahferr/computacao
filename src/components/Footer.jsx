@@ -21,7 +21,7 @@ export function Footer({ copy }) {
 
       <div className="footer-bottom">
         <span>{copy.site.footer}</span>
-        <span>Sara Ferreira</span>
+        <span> by Sara Ferreira</span>
       </div>
     </footer>
   );

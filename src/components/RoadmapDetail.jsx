@@ -1,15 +1,21 @@
+import { useEffect, useState } from "react";
 import { TechPanel } from "./TechPanel.jsx";
 
 export function RoadmapDetail({ area, hasResults, copy }) {
-  function scrollTopics(event) {
-    const topicList = event.currentTarget
-      .closest(".phase-content")
-      ?.querySelector(".topics");
+  const [activePhaseIndex, setActivePhaseIndex] = useState(0);
 
-    topicList?.scrollBy({
-      left: topicList.clientWidth * 0.82,
-      behavior: "smooth",
-    });
+  useEffect(() => {
+    setActivePhaseIndex(0);
+  }, [area.id]);
+
+  function showNextPhase() {
+    setActivePhaseIndex((current) => (current + 1) % area.phases.length);
+  }
+
+  function showPreviousPhase() {
+    setActivePhaseIndex(
+      (current) => (current - 1 + area.phases.length) % area.phases.length,
+    );
   }
 
   if (!hasResults) {
@@ -35,9 +41,14 @@ export function RoadmapDetail({ area, hasResults, copy }) {
 
         <TechPanel />
 
-        <div className="phases">
+        <div className="phases" style={{ "--active-phase": activePhaseIndex }}>
           {area.phases.map((phase, index) => (
-            <details className={`phase phase-color-${index + 1}`} key={phase.title} open>
+            <details
+              className={`phase phase-color-${index + 1}`}
+              data-stack-position={(index - activePhaseIndex + area.phases.length) % area.phases.length}
+              key={phase.title}
+              open
+            >
               <summary>
                 <span className="phase-number">{index + 1}</span>
                 <span className="phase-title">
@@ -54,17 +65,29 @@ export function RoadmapDetail({ area, hasResults, copy }) {
                     </div>
                   ))}
                 </div>
-                <button
-                  className="topic-next"
-                  type="button"
-                  aria-label={copy.detail.nextTopic}
-                  onClick={scrollTopics}
-                >
-                  <span aria-hidden="true">›</span>
-                </button>
               </div>
             </details>
           ))}
+        </div>
+        <div className="phase-controls">
+          <button
+            className="phase-nav phase-prev"
+            type="button"
+            aria-label={copy.detail.previousPhase}
+            onClick={showPreviousPhase}
+          >
+            <span aria-hidden="true">‹</span>
+            <span>Anterior</span>
+          </button>
+          <button
+            className="phase-nav phase-next"
+            type="button"
+            aria-label={copy.detail.nextPhase}
+            onClick={showNextPhase}
+          >
+            <span>Próximo</span>
+            <span aria-hidden="true">›</span>
+          </button>
         </div>
       </article>
     </section>

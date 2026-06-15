@@ -1,4 +1,4 @@
-import heroProgrammerImage from "../assets/computopia-hero-programmer.webp";
+import heroProgrammerImage from "../assets/girl.png";
 
 export function Hero({ copy, query, setQuery, stats }) {
   return (
@@ -14,7 +14,9 @@ export function Hero({ copy, query, setQuery, stats }) {
         <nav className="nav" aria-label="Navegação principal">
           {copy.navigation.map((item) => (
             <a
-              className={item.tone ? `nav-link nav-link-${item.tone}` : "nav-link"}
+              className={
+                item.tone ? `nav-link nav-link-${item.tone}` : "nav-link"
+              }
               key={`${item.href}-${item.label}`}
               href={item.href}
             >

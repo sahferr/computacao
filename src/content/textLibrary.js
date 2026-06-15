@@ -6,7 +6,7 @@ export const textLibrary = {
     heroTitle: "Computopia",
     heroLead:
       "Página sobre Ciência da Computação! Este espaço é organizado em guias de estudo para áreas essenciais em quatro fases progressivas. O objetivo é ser uma fonte de materiais livres tanto para calouros quanto para veteranos e autodidatas.",
-    footer: "Computopia: roteiro para estudar Ciência da Computação.",
+    footer: "Computopia",
   },
   navigation: [
     { label: "Início", href: "#root", tone: "active" },
@@ -67,7 +67,8 @@ export const textLibrary = {
   detail: {
     phaseCount: "4 fases",
     libraryToggle: "Bibliotecas",
-    nextTopic: "Mostrar próximo conteúdo",
+    previousPhase: "Mostrar card anterior",
+    nextPhase: "Mostrar próximo card",
     description:
       "Consolide os fundamentos de cada assunto e evolua gradualmente para aplicações práticas de alta complexidade.",
     topicCount: (count) => `${count} tópicos para explorar`,
